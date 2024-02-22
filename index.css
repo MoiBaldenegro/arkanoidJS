@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(192, 153, 153, 0.644);
+}
+canvas {
+    border: 4px solid #fff;
+    border-bottom: transparent;
+    background-color: rgba(0, 0, 0, 0.644);
+    margin: 0 auto;
+    display: block;
+}
