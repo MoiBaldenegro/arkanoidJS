@@ -1,4 +1,4 @@
-export function ballMovement(ballProps){
+export function ballMovement(ballProps, paddleProps){
     if(ballProps.positionX + ballProps.directionX > ballProps.canvasW - 3 || ballProps.positionX + ballProps.directionX < - 3 ){
         ballProps.directionX = -ballProps.directionX
     }
@@ -6,9 +6,18 @@ export function ballMovement(ballProps){
         console.log("colisionoarriba")
         ballProps.directionY = -ballProps.directionY 
     }
-    if(ballProps.positionY + ballProps.directionY > ballProps.canvasH - 3){
-        console.log("te cargo la verga")
-        document.location.reload();
+    if(ballProps.positionY + ballProps.directionY > ballProps.canvasH - 15){
+       if(ballProps.positionX > paddleProps.positionX && ballProps.positionX < paddleProps.positionX + 50) {
+        ballProps.directionY = -ballProps.directionY 
+    return
+    
+ } else {
+    document.location.reload();
+
+ }
+
+
+
     }
 
     ballProps.positionX += ballProps.directionX

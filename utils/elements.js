@@ -1,5 +1,10 @@
 // ball variables
-const ballRadius = 3;
+export const ballRadius = 3;
+
+// paddle variables
+export const paddleWidht = 50;
+export const paddleHeigh = 10;
+
 
 
 export function drawBall(ballProps){
@@ -11,9 +16,10 @@ export function drawBall(ballProps){
     ctx.closePath();
 }
 
-export function drawPaddle(x, y){
-    console.log("hola")
-
+export function drawPaddle(paddleProps){
+    const ctx = paddleProps.ctx
+    ctx.fillStyle = "#fff"
+    ctx.fillRect(paddleProps.positionX, paddleProps.positionY, 50, 10)
 }
 
 export function drawBricks(){
