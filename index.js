@@ -1,4 +1,4 @@
-import { drawBall, drawPaddle, drawBricks } from "./utils/elements.js";
+import { drawBall, drawPaddle, drawBricks, bricksCollition } from "./utils/elements.js";
 import { ballMovement } from "./utils/movements.js";
 import { paddleWidht, paddleHeigh } from "./utils/elements.js";
 
@@ -19,7 +19,6 @@ const ballProps = {
     canvasH: canvas.height
 
 }
-
 
 const paddleProps = {
     ctx : context,
@@ -69,12 +68,17 @@ function onPaddleMove(){
     }
 }
 
+
+
 function draw(){
+
     clearCanvas();
+    drawBricks(paddleProps)
     drawBall(ballProps);
     drawPaddle(paddleProps)
     ballMovement(ballProps, paddleProps);
     onPaddleMove()
+    bricksCollition(ballProps)
     window.requestAnimationFrame(draw)
 }
 initEvents();
